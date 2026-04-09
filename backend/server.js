@@ -2,15 +2,19 @@ const express = require("express");
 const cors = require("cors");
 const { v4: uuidv4 } = require("uuid");
 const axios = require("axios");
+const fs = require("fs");
+const path = require("path");
 
-const OPENROUTER_API_KEY = "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";
+const OPENROUTER_API_KEY = "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";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ─── In-Memory Database ───────────────────────────────────────────────────────
-const db = {
+// ─── JSON Database ────────────────────────────────────────────────────────────
+const dbPath = path.join(__dirname, "data", "db.json");
+
+const createInitialDB = () => ({
   users: [{ id: "user-1", email: "demo@testflow.ai", plan: "pro" }],
   projects: [],
   testPlans: [],
@@ -18,20 +22,51 @@ const db = {
   testCases: [],
   bugs: [],
   executions: [],
+});
+
+const readDB = () => {
+  if (!fs.existsSync(dbPath)) {
+    fs.mkdirSync(path.dirname(dbPath), { recursive: true });
+    const initialData = createInitialDB();
+    fs.writeFileSync(dbPath, JSON.stringify(initialData, null, 2), "utf-8");
+    return initialData;
+  }
+
+  const raw = fs.readFileSync(dbPath, "utf-8");
+  return JSON.parse(raw);
 };
+
+const writeDB = (data) => {
+  fs.writeFileSync(dbPath, JSON.stringify(data, null, 2), "utf-8");
+};
+
+let db = readDB();
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const now = () => new Date().toISOString();
 const find = (col, id) => db[col].find((x) => x.id === id);
 
+const openRouterHeaders = {
+  Authorization: `Bearer ${OPENROUTER_API_KEY}`,
+  "Content-Type": "application/json",
+  "HTTP-Referer": "http://localhost:3000",
+  "X-Title": "TestFlow",
+};
+
 // ─── PROJECTS ─────────────────────────────────────────────────────────────────
 app.get("/api/projects", (req, res) => {
+  db = readDB();
   res.json(db.projects);
 });
 
 app.post("/api/projects", (req, res) => {
   const { name, description } = req.body;
-  if (!name) return res.status(400).json({ error: "Name required" });
+
+  if (!name) {
+    return res.status(400).json({ error: "Name required" });
+  }
+
+  db = readDB();
 
   const project = {
     id: uuidv4(),
@@ -41,33 +76,59 @@ app.post("/api/projects", (req, res) => {
   };
 
   db.projects.push(project);
+  writeDB(db);
+
   res.status(201).json(project);
 });
 
 app.put("/api/projects/:id", (req, res) => {
+  db = readDB();
+
   const project = find("projects", req.params.id);
-  if (!project) return res.status(404).json({ error: "Not found" });
+  if (!project) {
+    return res.status(404).json({ error: "Not found" });
+  }
 
   Object.assign(project, req.body, { updatedAt: now() });
+  writeDB(db);
+
   res.json(project);
 });
 
 app.delete("/api/projects/:id", (req, res) => {
+  db = readDB();
+
   const idx = db.projects.findIndex((p) => p.id === req.params.id);
-  if (idx === -1) return res.status(404).json({ error: "Not found" });
+  if (idx === -1) {
+    return res.status(404).json({ error: "Not found" });
+  }
 
   db.projects.splice(idx, 1);
+
+  db.testPlans = db.testPlans.filter((p) => p.projectId !== req.params.id);
+  db.scenarios = db.scenarios.filter((s) => s.projectId !== req.params.id);
+  db.testCases = db.testCases.filter((t) => t.projectId !== req.params.id);
+  db.bugs = db.bugs.filter((b) => b.projectId !== req.params.id);
+  db.executions = db.executions.filter((e) => e.projectId !== req.params.id);
+
+  writeDB(db);
+
   res.json({ ok: true });
 });
 
 // ─── SCENARIOS ────────────────────────────────────────────────────────────────
 app.get("/api/projects/:id/scenarios", (req, res) => {
+  db = readDB();
   res.json(db.scenarios.filter((s) => s.projectId === req.params.id));
 });
 
 app.post("/api/projects/:id/scenarios/generate", async (req, res) => {
+  db = readDB();
+
   const project = find("projects", req.params.id);
-  if (!project) return res.status(404).json({ error: "Project not found" });
+  if (!project) {
+    return res.status(404).json({ error: "Project not found" });
+  }
 
   const { requirement } = req.body;
   if (!requirement) {
@@ -95,12 +156,7 @@ Respond ONLY with a JSON array like:
           },
         ],
       },
-      {
-        headers: {
-          Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-      }
+      { headers: openRouterHeaders }
     );
 
     const raw = response.data.choices[0].message.content
@@ -117,31 +173,45 @@ Respond ONLY with a JSON array like:
     }));
 
     db.scenarios.push(...scenarios);
+    writeDB(db);
+
     res.json(scenarios);
   } catch (err) {
     console.error(err.response?.data || err.message);
-    res
-      .status(500)
-      .json({ error: "AI generation failed", detail: err.message });
+    res.status(500).json({
+      error: "AI generation failed",
+      detail: err.response?.data || err.message,
+    });
   }
 });
 
 app.delete("/api/scenarios/:id", (req, res) => {
+  db = readDB();
+
   const idx = db.scenarios.findIndex((s) => s.id === req.params.id);
-  if (idx === -1) return res.status(404).json({ error: "Not found" });
+  if (idx === -1) {
+    return res.status(404).json({ error: "Not found" });
+  }
 
   db.scenarios.splice(idx, 1);
+  writeDB(db);
+
   res.json({ ok: true });
 });
 
 // ─── TEST CASES ───────────────────────────────────────────────────────────────
 app.get("/api/projects/:id/testcases", (req, res) => {
+  db = readDB();
   res.json(db.testCases.filter((tc) => tc.projectId === req.params.id));
 });
 
 app.post("/api/projects/:id/testcases/generate", async (req, res) => {
+  db = readDB();
+
   const project = find("projects", req.params.id);
-  if (!project) return res.status(404).json({ error: "Project not found" });
+  if (!project) {
+    return res.status(404).json({ error: "Project not found" });
+  }
 
   const { scenarioTitle, scenarioDescription } = req.body;
   if (!scenarioTitle) {
@@ -178,12 +248,7 @@ Generate 4 to 6 test cases.`,
           },
         ],
       },
-      {
-        headers: {
-          Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-      }
+      { headers: openRouterHeaders }
     );
 
     const raw = response.data.choices[0].message.content
@@ -201,40 +266,61 @@ Generate 4 to 6 test cases.`,
     }));
 
     db.testCases.push(...testCases);
+    writeDB(db);
+
     res.json(testCases);
   } catch (err) {
     console.error(err.response?.data || err.message);
-    res
-      .status(500)
-      .json({ error: "AI generation failed", detail: err.message });
+    res.status(500).json({
+      error: "AI generation failed",
+      detail: err.response?.data || err.message,
+    });
   }
 });
 
 app.put("/api/testcases/:id/status", (req, res) => {
+  db = readDB();
+
   const tc = find("testCases", req.params.id);
-  if (!tc) return res.status(404).json({ error: "Not found" });
+  if (!tc) {
+    return res.status(404).json({ error: "Not found" });
+  }
 
   tc.status = req.body.status;
   tc.updatedAt = now();
+  writeDB(db);
+
   res.json(tc);
 });
 
 app.delete("/api/testcases/:id", (req, res) => {
+  db = readDB();
+
   const idx = db.testCases.findIndex((t) => t.id === req.params.id);
-  if (idx === -1) return res.status(404).json({ error: "Not found" });
+  if (idx === -1) {
+    return res.status(404).json({ error: "Not found" });
+  }
 
   db.testCases.splice(idx, 1);
+  writeDB(db);
+
   res.json({ ok: true });
 });
 
 // ─── BUGS ─────────────────────────────────────────────────────────────────────
 app.get("/api/projects/:id/bugs", (req, res) => {
+  db = readDB();
   res.json(db.bugs.filter((b) => b.projectId === req.params.id));
 });
 
 app.post("/api/projects/:id/bugs", (req, res) => {
   const { title, description, severity } = req.body;
-  if (!title) return res.status(400).json({ error: "Title required" });
+
+  if (!title) {
+    return res.status(400).json({ error: "Title required" });
+  }
+
+  db = readDB();
 
   const bug = {
     id: uuidv4(),
@@ -247,27 +333,43 @@ app.post("/api/projects/:id/bugs", (req, res) => {
   };
 
   db.bugs.push(bug);
+  writeDB(db);
+
   res.status(201).json(bug);
 });
 
 app.put("/api/bugs/:id", (req, res) => {
+  db = readDB();
+
   const bug = find("bugs", req.params.id);
-  if (!bug) return res.status(404).json({ error: "Not found" });
+  if (!bug) {
+    return res.status(404).json({ error: "Not found" });
+  }
 
   Object.assign(bug, req.body, { updatedAt: now() });
+  writeDB(db);
+
   res.json(bug);
 });
 
 app.delete("/api/bugs/:id", (req, res) => {
+  db = readDB();
+
   const idx = db.bugs.findIndex((b) => b.id === req.params.id);
-  if (idx === -1) return res.status(404).json({ error: "Not found" });
+  if (idx === -1) {
+    return res.status(404).json({ error: "Not found" });
+  }
 
   db.bugs.splice(idx, 1);
+  writeDB(db);
+
   res.json({ ok: true });
 });
 
 // ─── STATS ────────────────────────────────────────────────────────────────────
 app.get("/api/projects/:id/stats", (req, res) => {
+  db = readDB();
+
   const pid = req.params.id;
   const tcs = db.testCases.filter((t) => t.projectId === pid);
 
@@ -286,13 +388,18 @@ app.get("/api/projects/:id/stats", (req, res) => {
 
 // ─── TEST PLAN (AI) ───────────────────────────────────────────────────────────
 app.get("/api/projects/:id/testplan", (req, res) => {
+  db = readDB();
   const plan = db.testPlans.find((p) => p.projectId === req.params.id);
   res.json(plan || null);
 });
 
 app.post("/api/projects/:id/testplan/generate", async (req, res) => {
+  db = readDB();
+
   const project = find("projects", req.params.id);
-  if (!project) return res.status(404).json({ error: "Project not found" });
+  if (!project) {
+    return res.status(404).json({ error: "Project not found" });
+  }
 
   const scenarios = db.scenarios.filter((s) => s.projectId === req.params.id);
   const testCases = db.testCases.filter((t) => t.projectId === req.params.id);
@@ -325,12 +432,7 @@ Return clean formatted text.`,
           },
         ],
       },
-      {
-        headers: {
-          Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-      }
+      { headers: openRouterHeaders }
     );
 
     const content = response.data.choices[0].message.content;
@@ -345,15 +447,21 @@ Return clean formatted text.`,
     const existing = db.testPlans.findIndex(
       (p) => p.projectId === req.params.id
     );
-    if (existing >= 0) db.testPlans[existing] = plan;
-    else db.testPlans.push(plan);
 
+    if (existing >= 0) {
+      db.testPlans[existing] = plan;
+    } else {
+      db.testPlans.push(plan);
+    }
+
+    writeDB(db);
     res.json(plan);
   } catch (err) {
     console.error(err.response?.data || err.message);
-    res
-      .status(500)
-      .json({ error: "AI generation failed", detail: err.message });
+    res.status(500).json({
+      error: "AI generation failed",
+      detail: err.response?.data || err.message,
+    });
   }
 });
 
@@ -364,6 +472,6 @@ app.get("/", (req, res) => {
 
 // ─── START ────────────────────────────────────────────────────────────────────
 const PORT = 4000;
-app.listen(PORT, () =>
-  console.log(`✅ TestFlow API running on http://localhost:${PORT}`)
-);
+app.listen(PORT, () => {
+  console.log(`✅ TestFlow API running on http://localhost:${PORT}`);
+});
