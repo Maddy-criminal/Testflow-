@@ -18,370 +18,100 @@
       "name": "AmozIT",
       "description": "these project has 2 app one is custoomer app were custoomer can purchase products also can book services another app is service provider app were assigned person go and give service to customer and also have company admin panel and super admin panel ",
       "createdAt": "2026-04-09T13:21:25.428Z"
+    },
+    {
+      "id": "10035c77-b0a3-4993-8de6-213b72feb346",
+      "name": "DRC",
+      "description": "this peoject is based on dr ram charan who has written books and wants to publish books on website ",
+      "createdAt": "2026-04-10T11:57:01.375Z"
+    }
+  ],
+  "spaces": [
+    {
+      "id": "975bb8c3-70ac-4b6a-a0d9-10e3e6b1f491",
+      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
+      "name": "Company Admin",
+      "type": "Admin Panel",
+      "createdAt": "2026-04-10T12:08:56.734Z"
+    },
+    {
+      "id": "f2cea770-445f-48bb-af66-778dafeac087",
+      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
+      "name": "Super Admin",
+      "type": "Admin Panel",
+      "createdAt": "2026-04-10T12:40:15.773Z"
+    },
+    {
+      "id": "a9619bbb-fc91-4e3d-ab81-98c6a36510ae",
+      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
+      "name": "Customer App",
+      "type": "Mobile App",
+      "createdAt": "2026-04-10T12:40:38.866Z"
+    },
+    {
+      "id": "0e01f611-2118-49a7-be7e-de6030e31c37",
+      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
+      "name": "Service Provider App",
+      "type": "Mobile App",
+      "createdAt": "2026-04-10T12:40:49.281Z"
     }
   ],
   "testPlans": [
     {
-      "id": "11cbd045-6e6e-4c6a-8c38-4115343b06d0",
-      "projectId": "b05cb0ea-39a4-45e3-a5dd-aaa717127911",
-      "content": "Test Plan Document\n\nObjective:\nThe objective of this test plan is to ensure that the SSA project, including both the recruiter and customer apps, functions as expected and meets the requirements specified in the project description. \n\nScope:\nThis test plan will cover testing of the following functionalities:\n1. User registration and login\n2. Job application process\n3. Chat functionality between users and recruiters\n4. Posting jobs by recruiters\n5. Notification system for job updates\n6. Following recruiters\n\nApproach:\nThe testing will be conducted using a combination of manual and automated testing techniques. Test cases will be designed to validate each functionality and its interactions with other components of the system. \n\nEntry Criteria:\n- The development of the project is complete\n- All functionalities are implemented as per the design requirements\n- Test environment is set up and ready for testing\n\nExit Criteria:\n- All critical bugs are fixed and verified\n- Test cases have been executed with a high pass rate\n- The project is ready for deployment to production\n\nRisks:\n- Integration issues between recruiter and customer apps\n- Unforeseen technical challenges during testing\n- Inadequate test coverage leading to missed defects\n\nTimeline:\nTesting will commence on [start date] and is expected to be completed by [end date]. The timeline may be adjusted based on the complexity of issues encountered during testing.\n\nThis test plan document is subject to review and may be updated as needed throughout the testing process.",
-      "generatedAt": "2026-04-09T13:06:01.671Z"
-    },
-    {
-      "id": "98eccec8-c774-4f96-b666-50e1a4f8d2e6",
+      "id": "b9f932fe-602d-421b-b935-9fbbce5bcb1c",
       "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "content": "Test Plan Document \n\nObjective: \nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project and to validate that all the features, services, and applications work as intended.\n\nScope:\nThe scope of this test plan includes testing the customer app, service provider app, company admin panel, and super admin panel. The testing will cover functionality, user experience, performance, security, and scalability.\n\nApproach:\nThe testing approach will include manual testing for the customer and service provider apps, as well as automated testing for the company admin panel and super admin panel. Test cases will be written and executed to verify the expected behavior of the system.\n\nEntry Criteria:\n- All software components are installed and configured properly\n- Test environment is set up and ready for testing\n- Test data is available for executing test cases\n\nExit Criteria:\n- All identified defects are resolved and retested\n- Test coverage is achieved for all functional and non-functional requirements\n- Test reports are generated and reviewed\n\nRisks:\n- Lack of test environment stability\n- Inadequate test data for comprehensive testing\n- Delays in development impacting the testing schedule\n\nTimeline:\nThe test plan will be executed over a period of 2 weeks, starting on [start date] and ending on [end date].\n\nThis document outlines the test plan for the AmozIT project and will serve as a guideline for the testing team to ensure the success of the project.",
-      "generatedAt": "2026-04-09T13:21:37.233Z"
+      "content": "Test Plan Document for Project: AmozIT\n\nObjective:\nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project, which consists of two mobile applications (customer app and service provider app), a company admin panel, and a super admin panel.\n\nScope:\nThe testing will focus on all aspects of the customer app, service provider app, company admin panel, and super admin panel. This includes but is not limited to, functionality, user interface, performance, security, and compatibility testing.\n\nApproach:\nThe testing approach will include manual testing as well as automation testing where applicable. Testing will be conducted by a dedicated QA team in collaboration with the development team.\n\nEntry Criteria:\n- All features and functionalities of the applications and panels are completed\n- Test environments are set up and ready for testing\n- Test data is available and ready for use\n\nExit Criteria:\n- All high priority bugs are fixed and verified\n- The applications and panels meet the acceptance criteria defined by the stakeholders\n- Test reports are generated and shared with the stakeholders\n\nRisks:\n- Integration issues between the customer app, service provider app, and admin panels\n- Security vulnerabilities in the applications\n- Compatibility issues with various devices and operating systems\n\nTimeline:\nThe testing phase is scheduled to begin on [start date] and conclude on [end date]. The exact duration of the testing phase will depend on the complexity of the project and the number of issues identified during testing.\n\nThis test plan document will be updated as needed throughout the testing phase to reflect any changes or updates.",
+      "generatedAt": "2026-04-10T14:32:08.873Z"
     }
   ],
   "scenarios": [
     {
-      "id": "3d60d9d4-6a7b-4cdb-a666-f1f59529108c",
-      "projectId": "b05cb0ea-39a4-45e3-a5dd-aaa717127911",
-      "title": "User Registration and Login",
-      "description": "Verify that users can successfully register and login to both the recruiter and customer apps using valid credentials. Check for validation of input fields, password strength requirements, and error messages for incorrect login attempts.",
+      "id": "0ad77e83-3f1b-4d99-b4d5-8f178b950e3c",
+      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
+      "title": "Verify user authentication process",
+      "description": "Ensure that users can successfully log in and log out of the customer app, service provider app, company admin panel, and super admin panel using valid credentials. Check for any issues with password recovery or account creation processes.",
       "priority": "High",
-      "requirement": "Objective:\nThe objective of this test plan is to ensure that the SSA project, including both the recruiter and customer apps, functions as expected and meets the requirements specified in the project description. \n\nScope:\nThis test plan will cover testing of the following functionalities:\n1. User registration and login\n2. Job application process\n3. Chat functionality between users and recruiters\n4. Posting jobs by recruiters\n5. Notification system for job updates\n6. Following recruiters\n\nApproach:\nThe testing will be conducted using a combination of manual and automated testing techniques. Test cases will be designed to validate each functionality and its interactions with other components of the system. \n\nEntry Criteria:\n- The development of the project is complete\n- All functionalities are implemented as per the design requirements\n- Test environment is set up and ready for testing\n\nExit Criteria:\n- All critical bugs are fixed and verified\n- Test cases have been executed with a high pass rate\n- The project is ready for deployment to production\n\nRisks:\n- Integration issues between recruiter and customer apps\n- Unforeseen technical challenges during testing\n- Inadequate test coverage leading to missed defects",
-      "createdAt": "2026-04-09T13:06:25.791Z"
+      "requirement": "Objective:\nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project, which consists of two mobile applications (customer app and service provider app), a company admin panel, and a super admin panel.\n\nScope:\nThe testing will focus on all aspects of the customer app, service provider app, company admin panel, and super admin panel. This includes but is not limited to, functionality, user interface, performance, security, and compatibility testing.\n\nApproach:\nThe testing approach will include manual testing as well as automation testing where applicable. Testing will be conducted by a dedicated QA team in collaboration with the development team.\n\nEntry Criteria:\n- All features and functionalities of the applications and panels are completed\n- Test environments are set up and ready for testing\n- Test data is available and ready for use\n\nExit Criteria:\n- All high priority bugs are fixed and verified\n- The applications and panels meet the acceptance criteria defined by the stakeholders\n- Test reports are generated and shared with the stakeholders\n\nRisks:\n- Integration issues between the customer app, service provider app, and admin panels\n- Security vulnerabilities in the applications\n- Compatibility issues with various devices and operating systems",
+      "createdAt": "2026-04-10T14:32:20.222Z"
     },
     {
-      "id": "53f386f4-80ad-42e9-9493-8f261c310583",
-      "projectId": "b05cb0ea-39a4-45e3-a5dd-aaa717127911",
-      "title": "Job Application Process",
-      "description": "Test the job application process by submitting an application as a customer and reviewing it as a recruiter. Ensure that the application is successfully received, stored, and displayed in the system. Verify that recruiters can view and respond to job applications.",
+      "id": "f47db17a-8daa-409e-b640-ae87db5e2c3c",
+      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
+      "title": "Test cross-platform compatibility",
+      "description": "Test the customer app, service provider app, company admin panel, and super admin panel on different devices and operating systems to ensure compatibility. Check for any layout or functionality issues that may arise on specific platforms.",
       "priority": "High",
-      "requirement": "Objective:\nThe objective of this test plan is to ensure that the SSA project, including both the recruiter and customer apps, functions as expected and meets the requirements specified in the project description. \n\nScope:\nThis test plan will cover testing of the following functionalities:\n1. User registration and login\n2. Job application process\n3. Chat functionality between users and recruiters\n4. Posting jobs by recruiters\n5. Notification system for job updates\n6. Following recruiters\n\nApproach:\nThe testing will be conducted using a combination of manual and automated testing techniques. Test cases will be designed to validate each functionality and its interactions with other components of the system. \n\nEntry Criteria:\n- The development of the project is complete\n- All functionalities are implemented as per the design requirements\n- Test environment is set up and ready for testing\n\nExit Criteria:\n- All critical bugs are fixed and verified\n- Test cases have been executed with a high pass rate\n- The project is ready for deployment to production\n\nRisks:\n- Integration issues between recruiter and customer apps\n- Unforeseen technical challenges during testing\n- Inadequate test coverage leading to missed defects",
-      "createdAt": "2026-04-09T13:06:25.791Z"
+      "requirement": "Objective:\nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project, which consists of two mobile applications (customer app and service provider app), a company admin panel, and a super admin panel.\n\nScope:\nThe testing will focus on all aspects of the customer app, service provider app, company admin panel, and super admin panel. This includes but is not limited to, functionality, user interface, performance, security, and compatibility testing.\n\nApproach:\nThe testing approach will include manual testing as well as automation testing where applicable. Testing will be conducted by a dedicated QA team in collaboration with the development team.\n\nEntry Criteria:\n- All features and functionalities of the applications and panels are completed\n- Test environments are set up and ready for testing\n- Test data is available and ready for use\n\nExit Criteria:\n- All high priority bugs are fixed and verified\n- The applications and panels meet the acceptance criteria defined by the stakeholders\n- Test reports are generated and shared with the stakeholders\n\nRisks:\n- Integration issues between the customer app, service provider app, and admin panels\n- Security vulnerabilities in the applications\n- Compatibility issues with various devices and operating systems",
+      "createdAt": "2026-04-10T14:32:20.222Z"
     },
     {
-      "id": "bc0117ba-930e-4a72-9960-18eba22241e8",
-      "projectId": "b05cb0ea-39a4-45e3-a5dd-aaa717127911",
-      "title": "Chat Functionality between Users and Recruiters",
-      "description": "Validate the chat functionality by sending messages between users and recruiters. Test for real-time updates, message delivery, message history retrieval, and notifications for new messages. Ensure that the chat system is secure and reliable.",
+      "id": "2fddd9f0-018a-4518-98e8-a0d80e66531a",
+      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
+      "title": "Perform security testing",
+      "description": "Conduct security testing to identify and address any vulnerabilities in the applications and panels. Test for common security threats such as SQL injection, cross-site scripting, and sensitive data exposure.",
       "priority": "High",
-      "requirement": "Objective:\nThe objective of this test plan is to ensure that the SSA project, including both the recruiter and customer apps, functions as expected and meets the requirements specified in the project description. \n\nScope:\nThis test plan will cover testing of the following functionalities:\n1. User registration and login\n2. Job application process\n3. Chat functionality between users and recruiters\n4. Posting jobs by recruiters\n5. Notification system for job updates\n6. Following recruiters\n\nApproach:\nThe testing will be conducted using a combination of manual and automated testing techniques. Test cases will be designed to validate each functionality and its interactions with other components of the system. \n\nEntry Criteria:\n- The development of the project is complete\n- All functionalities are implemented as per the design requirements\n- Test environment is set up and ready for testing\n\nExit Criteria:\n- All critical bugs are fixed and verified\n- Test cases have been executed with a high pass rate\n- The project is ready for deployment to production\n\nRisks:\n- Integration issues between recruiter and customer apps\n- Unforeseen technical challenges during testing\n- Inadequate test coverage leading to missed defects",
-      "createdAt": "2026-04-09T13:06:25.791Z"
+      "requirement": "Objective:\nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project, which consists of two mobile applications (customer app and service provider app), a company admin panel, and a super admin panel.\n\nScope:\nThe testing will focus on all aspects of the customer app, service provider app, company admin panel, and super admin panel. This includes but is not limited to, functionality, user interface, performance, security, and compatibility testing.\n\nApproach:\nThe testing approach will include manual testing as well as automation testing where applicable. Testing will be conducted by a dedicated QA team in collaboration with the development team.\n\nEntry Criteria:\n- All features and functionalities of the applications and panels are completed\n- Test environments are set up and ready for testing\n- Test data is available and ready for use\n\nExit Criteria:\n- All high priority bugs are fixed and verified\n- The applications and panels meet the acceptance criteria defined by the stakeholders\n- Test reports are generated and shared with the stakeholders\n\nRisks:\n- Integration issues between the customer app, service provider app, and admin panels\n- Security vulnerabilities in the applications\n- Compatibility issues with various devices and operating systems",
+      "createdAt": "2026-04-10T14:32:20.222Z"
     },
     {
-      "id": "c5c4bfc0-76a1-4783-99de-818bd1987a0e",
-      "projectId": "b05cb0ea-39a4-45e3-a5dd-aaa717127911",
-      "title": "Posting Jobs by Recruiters",
-      "description": "Verify that recruiters can successfully post job listings, including job title, description, requirements, and application deadlines. Test for validation of job posting fields, visibility of posted jobs to customers, and editing/deleting posted jobs.",
-      "priority": "High",
-      "requirement": "Objective:\nThe objective of this test plan is to ensure that the SSA project, including both the recruiter and customer apps, functions as expected and meets the requirements specified in the project description. \n\nScope:\nThis test plan will cover testing of the following functionalities:\n1. User registration and login\n2. Job application process\n3. Chat functionality between users and recruiters\n4. Posting jobs by recruiters\n5. Notification system for job updates\n6. Following recruiters\n\nApproach:\nThe testing will be conducted using a combination of manual and automated testing techniques. Test cases will be designed to validate each functionality and its interactions with other components of the system. \n\nEntry Criteria:\n- The development of the project is complete\n- All functionalities are implemented as per the design requirements\n- Test environment is set up and ready for testing\n\nExit Criteria:\n- All critical bugs are fixed and verified\n- Test cases have been executed with a high pass rate\n- The project is ready for deployment to production\n\nRisks:\n- Integration issues between recruiter and customer apps\n- Unforeseen technical challenges during testing\n- Inadequate test coverage leading to missed defects",
-      "createdAt": "2026-04-09T13:06:25.791Z"
-    },
-    {
-      "id": "f289d7ef-52e8-4267-a421-985b8e364d97",
-      "projectId": "b05cb0ea-39a4-45e3-a5dd-aaa717127911",
-      "title": "Notification System for Job Updates",
-      "description": "Test the notification system by subscribing to job updates as a customer and receiving notifications for new job postings, application responses, and chat messages. Verify that notifications are timely, accurate, and customizable for users.",
+      "id": "2d6f7a61-0dad-4cae-8ed6-1ea14a7e2197",
+      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
+      "title": "Test data handling and storage",
+      "description": "Verify that data inputted by users is correctly stored and retrieved in the database. Test for any data integrity issues or data leakage vulnerabilities that could compromise user information.",
       "priority": "Medium",
-      "requirement": "Objective:\nThe objective of this test plan is to ensure that the SSA project, including both the recruiter and customer apps, functions as expected and meets the requirements specified in the project description. \n\nScope:\nThis test plan will cover testing of the following functionalities:\n1. User registration and login\n2. Job application process\n3. Chat functionality between users and recruiters\n4. Posting jobs by recruiters\n5. Notification system for job updates\n6. Following recruiters\n\nApproach:\nThe testing will be conducted using a combination of manual and automated testing techniques. Test cases will be designed to validate each functionality and its interactions with other components of the system. \n\nEntry Criteria:\n- The development of the project is complete\n- All functionalities are implemented as per the design requirements\n- Test environment is set up and ready for testing\n\nExit Criteria:\n- All critical bugs are fixed and verified\n- Test cases have been executed with a high pass rate\n- The project is ready for deployment to production\n\nRisks:\n- Integration issues between recruiter and customer apps\n- Unforeseen technical challenges during testing\n- Inadequate test coverage leading to missed defects",
-      "createdAt": "2026-04-09T13:06:25.791Z"
+      "requirement": "Objective:\nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project, which consists of two mobile applications (customer app and service provider app), a company admin panel, and a super admin panel.\n\nScope:\nThe testing will focus on all aspects of the customer app, service provider app, company admin panel, and super admin panel. This includes but is not limited to, functionality, user interface, performance, security, and compatibility testing.\n\nApproach:\nThe testing approach will include manual testing as well as automation testing where applicable. Testing will be conducted by a dedicated QA team in collaboration with the development team.\n\nEntry Criteria:\n- All features and functionalities of the applications and panels are completed\n- Test environments are set up and ready for testing\n- Test data is available and ready for use\n\nExit Criteria:\n- All high priority bugs are fixed and verified\n- The applications and panels meet the acceptance criteria defined by the stakeholders\n- Test reports are generated and shared with the stakeholders\n\nRisks:\n- Integration issues between the customer app, service provider app, and admin panels\n- Security vulnerabilities in the applications\n- Compatibility issues with various devices and operating systems",
+      "createdAt": "2026-04-10T14:32:20.222Z"
     },
     {
-      "id": "86a5a270-94d9-4c77-8b8b-e7816240a59a",
+      "id": "7b8f6881-8cad-4eb9-b2cd-c22adb9375bd",
       "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Verify login functionality for customer app",
-      "description": "Ensure that customers can successfully log in to their accounts using valid credentials",
-      "priority": "High",
-      "requirement": "Objective: \nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project and to validate that all the features, services, and applications work as intended.\n\nScope:\nThe scope of this test plan includes testing the customer app, service provider app, company admin panel, and super admin panel. The testing will cover functionality, user experience, performance, security, and scalability.\n\nApproach:\nThe testing approach will include manual testing for the customer and service provider apps, as well as automated testing for the company admin panel and super admin panel. Test cases will be written and executed to verify the expected behavior of the system.\n\nEntry Criteria:\n- All software components are installed and configured properly\n- Test environment is set up and ready for testing\n- Test data is available for executing test cases\n\nExit Criteria:\n- All identified defects are resolved and retested\n- Test coverage is achieved for all functional and non-functional requirements\n- Test reports are generated and reviewed\n\nRisks:\n- Lack of test environment stability\n- Inadequate test data for comprehensive testing\n- Delays in development impacting the testing schedule",
-      "createdAt": "2026-04-09T13:21:56.434Z"
-    },
-    {
-      "id": "4060675e-aac7-4fde-97ab-075f5b61a095",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Test user experience for service provider app",
-      "description": "Evaluate the ease of use and navigation for service providers while using the app",
-      "priority": "High",
-      "requirement": "Objective: \nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project and to validate that all the features, services, and applications work as intended.\n\nScope:\nThe scope of this test plan includes testing the customer app, service provider app, company admin panel, and super admin panel. The testing will cover functionality, user experience, performance, security, and scalability.\n\nApproach:\nThe testing approach will include manual testing for the customer and service provider apps, as well as automated testing for the company admin panel and super admin panel. Test cases will be written and executed to verify the expected behavior of the system.\n\nEntry Criteria:\n- All software components are installed and configured properly\n- Test environment is set up and ready for testing\n- Test data is available for executing test cases\n\nExit Criteria:\n- All identified defects are resolved and retested\n- Test coverage is achieved for all functional and non-functional requirements\n- Test reports are generated and reviewed\n\nRisks:\n- Lack of test environment stability\n- Inadequate test data for comprehensive testing\n- Delays in development impacting the testing schedule",
-      "createdAt": "2026-04-09T13:21:56.434Z"
-    },
-    {
-      "id": "6a4f5891-50f5-4709-8aed-fa43820bd789",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Validate data input for company admin panel",
-      "description": "Check the accuracy and validation of data entered by company admins in the admin panel",
+      "title": "Evaluate performance under load",
+      "description": "Simulate a high volume of user requests to assess the performance of the customer app, service provider app, company admin panel, and super admin panel. Monitor response times and server load to identify any performance bottlenecks.",
       "priority": "Medium",
-      "requirement": "Objective: \nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project and to validate that all the features, services, and applications work as intended.\n\nScope:\nThe scope of this test plan includes testing the customer app, service provider app, company admin panel, and super admin panel. The testing will cover functionality, user experience, performance, security, and scalability.\n\nApproach:\nThe testing approach will include manual testing for the customer and service provider apps, as well as automated testing for the company admin panel and super admin panel. Test cases will be written and executed to verify the expected behavior of the system.\n\nEntry Criteria:\n- All software components are installed and configured properly\n- Test environment is set up and ready for testing\n- Test data is available for executing test cases\n\nExit Criteria:\n- All identified defects are resolved and retested\n- Test coverage is achieved for all functional and non-functional requirements\n- Test reports are generated and reviewed\n\nRisks:\n- Lack of test environment stability\n- Inadequate test data for comprehensive testing\n- Delays in development impacting the testing schedule",
-      "createdAt": "2026-04-09T13:21:56.434Z"
-    },
-    {
-      "id": "86130279-d899-47dc-aa77-d704e12e12e8",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Test scalability of super admin panel",
-      "description": "Verify the system's ability to handle a large number of requests and users in the super admin panel",
-      "priority": "Medium",
-      "requirement": "Objective: \nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project and to validate that all the features, services, and applications work as intended.\n\nScope:\nThe scope of this test plan includes testing the customer app, service provider app, company admin panel, and super admin panel. The testing will cover functionality, user experience, performance, security, and scalability.\n\nApproach:\nThe testing approach will include manual testing for the customer and service provider apps, as well as automated testing for the company admin panel and super admin panel. Test cases will be written and executed to verify the expected behavior of the system.\n\nEntry Criteria:\n- All software components are installed and configured properly\n- Test environment is set up and ready for testing\n- Test data is available for executing test cases\n\nExit Criteria:\n- All identified defects are resolved and retested\n- Test coverage is achieved for all functional and non-functional requirements\n- Test reports are generated and reviewed\n\nRisks:\n- Lack of test environment stability\n- Inadequate test data for comprehensive testing\n- Delays in development impacting the testing schedule",
-      "createdAt": "2026-04-09T13:21:56.434Z"
-    },
-    {
-      "id": "e5eab377-3130-4b1e-901b-fc9817e4afb9",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Perform security testing for all applications",
-      "description": "Conduct penetration testing and vulnerability assessment to ensure the security of the system",
-      "priority": "High",
-      "requirement": "Objective: \nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project and to validate that all the features, services, and applications work as intended.\n\nScope:\nThe scope of this test plan includes testing the customer app, service provider app, company admin panel, and super admin panel. The testing will cover functionality, user experience, performance, security, and scalability.\n\nApproach:\nThe testing approach will include manual testing for the customer and service provider apps, as well as automated testing for the company admin panel and super admin panel. Test cases will be written and executed to verify the expected behavior of the system.\n\nEntry Criteria:\n- All software components are installed and configured properly\n- Test environment is set up and ready for testing\n- Test data is available for executing test cases\n\nExit Criteria:\n- All identified defects are resolved and retested\n- Test coverage is achieved for all functional and non-functional requirements\n- Test reports are generated and reviewed\n\nRisks:\n- Lack of test environment stability\n- Inadequate test data for comprehensive testing\n- Delays in development impacting the testing schedule",
-      "createdAt": "2026-04-09T13:21:56.434Z"
+      "requirement": "Objective:\nThe objective of this test plan is to ensure the quality and functionality of the AmozIT project, which consists of two mobile applications (customer app and service provider app), a company admin panel, and a super admin panel.\n\nScope:\nThe testing will focus on all aspects of the customer app, service provider app, company admin panel, and super admin panel. This includes but is not limited to, functionality, user interface, performance, security, and compatibility testing.\n\nApproach:\nThe testing approach will include manual testing as well as automation testing where applicable. Testing will be conducted by a dedicated QA team in collaboration with the development team.\n\nEntry Criteria:\n- All features and functionalities of the applications and panels are completed\n- Test environments are set up and ready for testing\n- Test data is available and ready for use\n\nExit Criteria:\n- All high priority bugs are fixed and verified\n- The applications and panels meet the acceptance criteria defined by the stakeholders\n- Test reports are generated and shared with the stakeholders\n\nRisks:\n- Integration issues between the customer app, service provider app, and admin panels\n- Security vulnerabilities in the applications\n- Compatibility issues with various devices and operating systems",
+      "createdAt": "2026-04-10T14:32:20.222Z"
     }
   ],
-  "testCases": [
-    {
-      "id": "27f34857-a5fa-40ee-ae75-fd001f583af4",
-      "projectId": "b05cb0ea-39a4-45e3-a5dd-aaa717127911",
-      "title": "Submit job application successfully as a customer",
-      "preconditions": "Customer is logged into the system",
-      "steps": [
-        "Fill out all required fields in the job application form",
-        "Click on the submit button"
-      ],
-      "expectedResult": "Job application is successfully submitted and stored in the system",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Pass",
-      "scenarioTitle": "Job Application Process ",
-      "createdAt": "2026-04-09T13:07:02.738Z",
-      "updatedAt": "2026-04-09T13:07:05.675Z"
-    },
-    {
-      "id": "21ffb7a2-41cd-4a7b-a736-71392033d9c8",
-      "projectId": "b05cb0ea-39a4-45e3-a5dd-aaa717127911",
-      "title": "View submitted job application as a customer",
-      "preconditions": "Customer is logged into the system and has submitted a job application",
-      "steps": [
-        "Navigate to the job applications section",
-        "Find and click on the submitted job application"
-      ],
-      "expectedResult": "Customer is able to view the details of their submitted job application",
-      "priority": "Medium",
-      "type": "Functional",
-      "status": "Fail",
-      "scenarioTitle": "Job Application Process ",
-      "createdAt": "2026-04-09T13:07:02.739Z",
-      "updatedAt": "2026-04-09T13:07:19.675Z"
-    },
-    {
-      "id": "60e00625-0ec8-4fde-816b-22c4ba78db60",
-      "projectId": "b05cb0ea-39a4-45e3-a5dd-aaa717127911",
-      "title": "Recruiter views job application",
-      "preconditions": "Recruiter is logged into the system and has job applications to review",
-      "steps": [
-        "Navigate to the job applications section",
-        "Find and click on a job application to review"
-      ],
-      "expectedResult": "Recruiter is able to view the details of the job application and make a decision",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Not Run",
-      "scenarioTitle": "Job Application Process ",
-      "createdAt": "2026-04-09T13:07:02.739Z"
-    },
-    {
-      "id": "c5ad788d-641b-4445-93c9-6f693277f9db",
-      "projectId": "b05cb0ea-39a4-45e3-a5dd-aaa717127911",
-      "title": "Recruiter responds to job application",
-      "preconditions": "Recruiter is logged into the system and viewing a job application",
-      "steps": [
-        "Review the job application details",
-        "Select a response option (e.g. accept, reject, schedule interview)",
-        "Add any relevant feedback or comments",
-        "Click on the submit button"
-      ],
-      "expectedResult": "Recruiter's response is recorded and the applicant is notified accordingly",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Not Run",
-      "scenarioTitle": "Job Application Process ",
-      "createdAt": "2026-04-09T13:07:02.739Z"
-    },
-    {
-      "id": "80082471-9ce5-4018-9054-95653c08017d",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Verify service provider can log in to the app",
-      "preconditions": "Service provider has valid credentials",
-      "steps": [
-        "1. Open the app",
-        "2. Enter valid credentials and tap on the login button"
-      ],
-      "expectedResult": "Service provider is successfully logged in to the app",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Pass",
-      "scenarioTitle": "Test user experience for service provider app ",
-      "createdAt": "2026-04-09T13:22:46.779Z",
-      "updatedAt": "2026-04-09T13:22:59.299Z"
-    },
-    {
-      "id": "1d645c70-3ab1-4ca1-845c-9fc2bf305452",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Verify service provider can view their assigned tasks",
-      "preconditions": "Service provider is logged in to the app",
-      "steps": [
-        "1. Navigate to the dashboard section",
-        "2. View the list of assigned tasks"
-      ],
-      "expectedResult": "Service provider can see a clear list of their assigned tasks",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Pass",
-      "scenarioTitle": "Test user experience for service provider app ",
-      "createdAt": "2026-04-09T13:22:46.779Z",
-      "updatedAt": "2026-04-09T13:22:55.037Z"
-    },
-    {
-      "id": "42196873-e902-4c1d-b64a-dd8d16325e4f",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Verify service provider can update task status",
-      "preconditions": "Service provider has an assigned task",
-      "steps": [
-        "1. Open the specific task details page",
-        "2. Update the task status"
-      ],
-      "expectedResult": "Task status is successfully updated and reflected in the app",
-      "priority": "Medium",
-      "type": "Functional",
-      "status": "Fail",
-      "scenarioTitle": "Test user experience for service provider app ",
-      "createdAt": "2026-04-09T13:22:46.779Z",
-      "updatedAt": "2026-04-09T13:23:01.211Z"
-    },
-    {
-      "id": "54de9448-47cf-4f07-afcd-d3bd4d0ada2c",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Verify service provider can easily navigate to different app sections",
-      "preconditions": "Service provider is logged in to the app",
-      "steps": [
-        "1. Explore the menu options for different sections",
-        "2. Navigate to different sections like tasks, profile, settings, etc."
-      ],
-      "expectedResult": "Service provider can easily switch between app sections without any confusion",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Not Run",
-      "scenarioTitle": "Test user experience for service provider app ",
-      "createdAt": "2026-04-09T13:22:46.780Z"
-    },
-    {
-      "id": "232d9649-19af-4af8-83d1-30b5f0c74218",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Verify service provider can receive notifications for new tasks",
-      "preconditions": "Service provider is logged in to the app",
-      "steps": [
-        "1. Wait for a new task to be assigned",
-        "2. Check for notifications or alerts on the app"
-      ],
-      "expectedResult": "Service provider receives timely notifications for new tasks to be completed",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Not Run",
-      "scenarioTitle": "Test user experience for service provider app ",
-      "createdAt": "2026-04-09T13:22:46.780Z"
-    },
-    {
-      "id": "df40ce8e-3a85-4e0e-a96a-6298e2ded60a",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Verify that company admin can only enter alphanumeric characters in the company name field",
-      "preconditions": "Company admin is logged into the admin panel",
-      "steps": [
-        "Enter special characters in the company name field",
-        "Submit the form"
-      ],
-      "expectedResult": "Error message should be displayed indicating invalid characters",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Pass",
-      "scenarioTitle": "Validate data input for company admin panel ",
-      "createdAt": "2026-04-09T13:43:42.034Z",
-      "updatedAt": "2026-04-09T13:43:48.629Z"
-    },
-    {
-      "id": "1b7a9b65-3262-4724-8bf0-fcffa61d7fa1",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Ensure that company admin must enter a valid email address in the email field",
-      "preconditions": "Company admin is logged into the admin panel",
-      "steps": [
-        "Enter an invalid email address format",
-        "Submit the form"
-      ],
-      "expectedResult": "Error message should be displayed indicating invalid email address",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Fail",
-      "scenarioTitle": "Validate data input for company admin panel ",
-      "createdAt": "2026-04-09T13:43:42.034Z",
-      "updatedAt": "2026-04-09T13:43:50.141Z"
-    },
-    {
-      "id": "acedfa1b-5647-4ac0-a9f0-0876f7eb00bc",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Check that company admin must select a valid country from the dropdown menu",
-      "preconditions": "Company admin is logged into the admin panel",
-      "steps": [
-        "Select an invalid country from the dropdown menu",
-        "Submit the form"
-      ],
-      "expectedResult": "Error message should be displayed indicating invalid country selection",
-      "priority": "Medium",
-      "type": "Functional",
-      "status": "Not Run",
-      "scenarioTitle": "Validate data input for company admin panel ",
-      "createdAt": "2026-04-09T13:43:42.034Z"
-    },
-    {
-      "id": "b5704e75-288b-40d3-aa37-3aa43c8b8094",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Verify that company admin must enter a valid phone number in the phone number field",
-      "preconditions": "Company admin is logged into the admin panel",
-      "steps": [
-        "Enter an invalid phone number format",
-        "Submit the form"
-      ],
-      "expectedResult": "Error message should be displayed indicating invalid phone number",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Not Run",
-      "scenarioTitle": "Validate data input for company admin panel ",
-      "createdAt": "2026-04-09T13:43:42.034Z"
-    },
-    {
-      "id": "c7a87255-ab8d-4aa7-b039-eba2d4bc4904",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Ensure that company admin cannot submit the form with any empty mandatory fields",
-      "preconditions": "Company admin is logged into the admin panel",
-      "steps": [
-        "Leave one or more mandatory fields empty",
-        "Try to submit the form"
-      ],
-      "expectedResult": "Error message should be displayed indicating the required field(s)",
-      "priority": "High",
-      "type": "Functional",
-      "status": "Not Run",
-      "scenarioTitle": "Validate data input for company admin panel ",
-      "createdAt": "2026-04-09T13:43:42.034Z"
-    }
-  ],
-  "bugs": [
-    {
-      "id": "bc43a429-01be-4c85-8f39-64530266f8d0",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Verify service provider can update task status",
-      "description": "Preconditions: Service provider has an assigned task\n\nSteps:\n1. Open the specific task details page\n2. Update the task status\n\nExpected Result: Task status is successfully updated and reflected in the app",
-      "severity": "Medium",
-      "status": "Resolved",
-      "createdAt": "2026-04-09T13:23:05.019Z",
-      "updatedAt": "2026-04-09T13:44:00.864Z"
-    },
-    {
-      "id": "f6485892-6d24-4148-80a0-f1cd34e8030c",
-      "projectId": "cbe20190-1acc-4f96-95e2-83f92facb749",
-      "title": "Ensure that company admin must enter a valid email address in the email field",
-      "description": "Preconditions: Company admin is logged into the admin panel\n\nSteps:\nEnter an invalid email address format\nSubmit the form\n\nExpected Result: Error message should be displayed indicating invalid email address",
-      "severity": "Medium",
-      "status": "In Progress",
-      "createdAt": "2026-04-09T13:43:53.716Z",
-      "updatedAt": "2026-04-09T13:43:58.673Z"
-    }
-  ],
+  "testCases": [],
+  "bugs": [],
   "executions": []
 }
